@@ -19,18 +19,20 @@ options=()
 
 case "$CARCH" in
 	i686)
+		_bldarch="i386"
 		md5sums=('665bee1e004401a399734eefabc6027a');;
 	x86_64)
+		_bldarch="x86_64"
 		md5sums=('2ac28df5aa1084fc87751dd6123b829f');
 esac
 
 install=
-source=(http://downloads.sourceforge.net/project/virtualgl/VirtualGL/$pkgver/$_srcname-$pkgver.$CARCH.rpm)
-noextract=($_srcname-$pkgver.$CARCH.rpm)
+source=(http://downloads.sourceforge.net/project/virtualgl/VirtualGL/$pkgver/$_srcname-$pkgver.$_bldarch.rpm)
+noextract=($_srcname-$pkgver.$_bldarch.rpm)
 
 build() {
   cd "$srcdir"
-  rpmextract.sh $_srcname-$pkgver.$CARCH.rpm
+  rpmextract.sh $_srcname-$pkgver.$_bldarch.rpm
   mv usr opt $pkgdir
 }
 
