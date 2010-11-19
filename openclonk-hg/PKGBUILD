@@ -2,8 +2,8 @@
 # Contributer: Markus Golser <elmargol@googlemail.com>
 
 pkgname='openclonk-hg'
-pkgver=2027
-pkgrel=2
+pkgver=2032
+pkgrel=1
 pkgdesc="A multiplayer-action-tactic-skill game"
 url="http://wiki.openclonk.org"
 license='custom'
