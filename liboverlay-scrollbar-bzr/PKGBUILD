@@ -2,7 +2,7 @@
 
 pkgname=liboverlay-scrollbar-bzr
 pkgver=1
-pkgrel=2
+pkgrel=3
 pkgdesc="Overlay scrollbar widget for GTK+ (Canonical Ayatana Project)"
 arch=('i686' 'x86_64')
 url="https://launchpad.net/ayatana-scrollbar"
@@ -14,7 +14,7 @@ makedepends=('bzr')
 source=()
 md5sums=()
 
-_bzrtrunk=lp:ayatana-scrollbar
+_bzrbranch=lp:ayatana-scrollbar
 _bzrmod=ayatana-scrollbar
 
 build() {
