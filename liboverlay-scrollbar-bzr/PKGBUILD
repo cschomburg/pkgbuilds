@@ -2,7 +2,7 @@
 
 pkgname=liboverlay-scrollbar-bzr
 pkgver=1
-pkgrel=1
+pkgrel=2
 pkgdesc="Overlay scrollbar widget for GTK+ (Canonical Ayatana Project)"
 arch=('i686' 'x86_64')
 url="https://launchpad.net/ayatana-scrollbar"
@@ -14,15 +14,14 @@ makedepends=('bzr')
 source=()
 md5sums=()
 
-_bzrbranch=lp:ayatana-scrollbar
+_bzrtrunk=lp:ayatana-scrollbar
 _bzrmod=ayatana-scrollbar
 
 build() {
-   cd ${srcdir}
+  cd "$srcdir"
+  msg "C{{onnecting to Bazaar server...."
 
-  msg "Connecting to the server...."
-
-  if [ ! -d ./${_bzrmod} ]; then
+  if [ ! -d ./${_bzrmod} ] ; then
     bzr co ${_bzrbranch} ${_bzrmod}
   else
     bzr up ${_bzrmod}
@@ -35,8 +34,12 @@ build() {
   cp -r ./${_bzrmod} ./${_bzrmod}-build
   cd ./${_bzrmod}-build
 
-  ./autogen.sh || return 1
-  ./configure --disable-static --prefix=/usr || return 1
-  make || return 1
-  make DESTDIR="$pkgdir" install || return 1
+  ./autogen.sh
+  ./configure --disable-static --prefix=/usr
+  make
+}
+
+package() {
+	cd "$srcdir/$_bzrmod-build"
+	make DESTDIR="$pkgdir/" install
 }
