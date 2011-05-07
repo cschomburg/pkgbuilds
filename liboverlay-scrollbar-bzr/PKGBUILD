@@ -3,7 +3,7 @@
 pkgname=liboverlay-scrollbar-bzr
 pkgver=LATEST
 pkgrel=1
-pkgdesc="Scrollbars use an overlay to ensure that no active screen real-estate is taken up (Canonical Ayatana Project)"
+pkgdesc="Overlay scrollbar widget for GTK+ (Canonical Ayatana Project)"
 arch=('i686' 'x86_64')
 url="https://launchpad.net/ayatana-scrollbar"
 license=('GPL')
