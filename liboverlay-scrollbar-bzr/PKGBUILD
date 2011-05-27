@@ -7,10 +7,10 @@ pkgdesc="Overlay scrollbar widget for GTK+ (Canonical Ayatana Project)"
 arch=('i686' 'x86_64')
 url="https://launchpad.net/ayatana-scrollbar"
 license=('GPL')
-depends=('gnome-common' 'gtk2-overlay-scrollbar')
+depends=('gtk2-overlay-scrollbar')
 conflicts=()
 provides=()
-makedepends=('bzr')
+makedepends=('bzr' 'gnome-common')
 source=()
 md5sums=()
 
@@ -35,7 +35,7 @@ build() {
   cd ./${_bzrmod}-build
 
   ./autogen.sh
-  ./configure --disable-static --prefix=/usr
+  ./configure --disable-static --prefix=/usr --sysconfdir=/etc
   make
 }
 
