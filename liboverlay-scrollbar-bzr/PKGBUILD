@@ -1,7 +1,7 @@
 # Maintainer: Constantin Schomburg <me@xconstruct.net>
 
 pkgname=liboverlay-scrollbar-bzr
-pkgver=229
+pkgver=242
 pkgrel=1
 pkgdesc="Overlay scrollbar widget for GTK+ (Canonical Ayatana Project)"
 arch=('i686' 'x86_64')
