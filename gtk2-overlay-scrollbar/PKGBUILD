@@ -3,7 +3,7 @@
 
 pkgname=gtk2-overlay-scrollbar
 pkgver=2.24.4
-pkgrel=1
+pkgrel=2
 pkgdesc="The GTK+ Toolkit (v2) with overlay-scrollbar loading patch (Canonical Ayatana Project)"
 arch=('i686' 'x86_64')
 url="http://www.gtk.org/"
