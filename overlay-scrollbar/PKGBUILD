@@ -1,25 +1,14 @@
 # Maintainer: Constantin Schomburg <me@xconstruct.net>
 
 pkgname=overlay-scrollbar
-pkgver=0.2.1
-_pkgbranch=0.2
+pkgver=1.0
 pkgrel=1
-pkgdesc="Overlay scrollbar widget for GTK+ (Canonical Ayatana Project)"
-arch=('i686' 'x86_64')
+pkgdesc="Metapackage for overlay scrollbar widgets in GTK+ (Canonical Ayatana Project)"
+arch=('any')
 url="https://launchpad.net/ayatana-scrollbar"
 license=('GPL')
-depends=('gtk2-overlay-scrollbar' 'gtk3-overlay-scrollbar')
-conflicts=('liboverlay-scrollbar-bzr')
-source=(http://launchpad.net/ayatana-scrollbar/$_pkgbranch/$pkgver/+download/$pkgname-$pkgver.tar.gz)
-md5sums=('6445f1276bebaa98167e3f934be95637')
+depends=('liboverlay-scrollbar' 'liboverlay-scrollbar3')
 
 build() {
-  cd "$srcdir/$pkgname-$pkgver"
-  ./configure --disable-static --prefix=/usr --sysconfdir=/etc
-  make
-}
-
-package() {
-	cd "$srcdir/$pkgname-$pkgver"
-	make DESTDIR="$pkgdir" install
+	return 0
 }
