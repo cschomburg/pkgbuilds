@@ -2,7 +2,7 @@
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=gtk3-overlay-scrollbar
-pkgver=3.0.9
+pkgver=3.0.11
 pkgrel=1
 pkgdesc="The GTK+ Toolkit (v3) with overlay-scrollbar loading patch (Canonical Ayatana Project)"
 arch=('i686' 'x86_64')
@@ -15,11 +15,11 @@ conflicts=('gtk3')
 options=('!libtool' '!docs')
 backup=(etc/gtk-3.0/settings.ini)
 license=('LGPL')
-source=(http://ftp.gnome.org/pub/gnome/sources/gtk+/3.0/gtk+-${pkgver}.tar.bz2
+source=(http://ftp.gnome.org/pub/gnome/sources/gtk+/3.0/gtk+-${pkgver}.tar.xz
         settings.ini
 		gtk+-3.0-right-filter-window-for-XI2-events.patch
 		gtk+-3.0-use-overlay-form-module.patch)
-sha256sums=('88a9dda6f2a23155ac3d7aca6b414ca3b55e2817b46bcc87733f1a407e16678c'
+sha256sums=('e2e38b316c4657df0cf376c3b6aad63158a9068c557ad41033a677f29967001b'
             'c214d3dcdcadda3d642112287524ab3e526ad592b70895c9f3e3733c23701621'
 			'43fe524696d62d55d0ea9e8e4665dcfe57f0c1835e2487305c6808c72ec95ddb'
 			'f9d035833b945547b517e8f84f80ece13c4cd6013ac980e7d19d57dd8eab369c')
