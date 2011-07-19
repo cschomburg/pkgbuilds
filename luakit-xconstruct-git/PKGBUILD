@@ -1,7 +1,7 @@
 # Maintainer: Constantin Schomburg <me@xconstruct.net>
 
 pkgname=luakit-xconstruct-git
-pkgver=20110713
+pkgver=20110718
 pkgrel=1
 pkgdesc="A fast, small, webkit-gtk based browser extensible by Lua"
 arch=('i686' 'x86_64')
@@ -16,7 +16,7 @@ conflicts=('luakit' 'luakit-git')
 install=luakit-git.install
 
 _gitroot="git://github.com/xconstruct/luakit.git"
-_gitname="develop"
+_gitname="integration"
 
 md5sums=('184069a7264115726f73204d1d708e2c')
 
