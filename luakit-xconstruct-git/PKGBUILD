@@ -1,7 +1,7 @@
 # Maintainer: Constantin Schomburg <me@xconstruct.net>
 
 pkgname=luakit-xconstruct-git
-pkgver=20110902
+pkgver=20110926
 pkgrel=1
 pkgdesc="A fast, small, webkit-gtk based browser extensible by Lua"
 arch=('i686' 'x86_64')
