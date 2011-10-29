@@ -14,8 +14,10 @@ depends=('libcups' 'cups' 'popt' 'ghostscript' 'gsfonts' 'atk>=1.9.0' 'gtk2>=2.8
 makedepends=('autoconf>=2.13' 'automake>=1.6' 'tar' 'make' 'gcc')
 conflicts=('cnijfilter-common')
 install=cnijfilter-mg5200.install
-source=(http://gdlp01.c-wss.com/gds/0/0100003020/01/cnijfilter-source-${_pkgver}.tar.gz)
-md5sums=('609975a05d6050fcca88f312d3f35c6a')
+source=(http://gdlp01.c-wss.com/gds/0/0100003020/01/cnijfilter-source-${_pkgver}.tar.gz
+        include_cups_ppd_h.patch)
+md5sums=('609975a05d6050fcca88f312d3f35c6a'
+         '8793e5d1d3a85ec1ac42f90ee465ac81')
 
 build() {
   if [ "$CARCH" == "x86_64" ]; then  
@@ -23,6 +25,9 @@ build() {
   else
     libdir=libs_bin32
   fi
+
+  cd "${srcdir}/cnijfilter-source-${_pkgver}"
+  patch -Np1 -i ../../include_cups_ppd_h.patch
 
   ## Compile and install mg5200 stuff
   # ppd file
