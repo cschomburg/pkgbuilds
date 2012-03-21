@@ -15,9 +15,13 @@ makedepends=('autoconf>=2.13' 'automake>=1.6' 'tar' 'make' 'gcc')
 conflicts=('cnijfilter-common')
 install=cnijfilter-mg5200.install
 source=(http://gdlp01.c-wss.com/gds/0/0100003020/01/cnijfilter-source-${_pkgver}.tar.gz
-        include_cups_ppd_h.patch)
+        include_cups_ppd_h.patch
+        libpng15.patch
+        ldl.patch)
 md5sums=('609975a05d6050fcca88f312d3f35c6a'
-         '8793e5d1d3a85ec1ac42f90ee465ac81')
+         '8793e5d1d3a85ec1ac42f90ee465ac81'
+         '1a3b3c33618dae268458a2b4fd2fd28f'
+         '03eae102f90d5b0f3b1763a36a342f88')
 
 build() {
   if [ "$CARCH" == "x86_64" ]; then  
@@ -27,7 +31,9 @@ build() {
   fi
 
   cd "${srcdir}/cnijfilter-source-${_pkgver}"
-  patch -Np1 -i ../../include_cups_ppd_h.patch
+  patch -Np1 -i ../include_cups_ppd_h.patch
+  patch -Np1 -i ../libpng15.patch
+  patch -Np1 -i ../ldl.patch
 
   ## Compile and install mg5200 stuff
   # ppd file
