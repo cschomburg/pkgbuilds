@@ -1,7 +1,7 @@
 # Maintainer: Constantin Schomburg <me@xconstruct.net>
 
 pkgname=luakit-xconstruct-git
-pkgver=20110926
+pkgver=20120518
 pkgrel=1
 pkgdesc="A fast, small, webkit-gtk based browser extensible by Lua"
 arch=('i686' 'x86_64')
@@ -9,7 +9,7 @@ url="http://www.luakit.org/projects/luakit"
 license=('GPL3')
 depends=('libwebkit' 'luafilesystem' 'libunique')
 makedepends=('git' 'lua' 'help2man')
-optdepends=('luajit2:Needed if use the luajit option in make')
+optdepends=('luajit2: Needed if use the luajit option in make')
 source=(luakit-git.install)
 provides=(luakit)
 conflicts=('luakit' 'luakit-git')
